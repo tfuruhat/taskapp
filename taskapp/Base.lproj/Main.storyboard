@@ -119,13 +119,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="07G-u7-aUq">
-                                <rect key="frame" x="21" y="182" width="324" height="120"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="詳細" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="07G-u7-aUq">
+                                <rect key="frame" x="10" y="182" width="355" height="120"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="QLl-mi-WC5"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -142,8 +141,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="8w5-wI-Xtf" firstAttribute="top" secondItem="07G-u7-aUq" secondAttribute="bottom" constant="10" id="2ax-e8-6Y0"/>
+                            <constraint firstItem="07G-u7-aUq" firstAttribute="leading" secondItem="1zT-iv-4g7" secondAttribute="leading" constant="10" id="2g0-G1-udQ"/>
                             <constraint firstItem="izr-x9-439" firstAttribute="top" secondItem="1zT-iv-4g7" secondAttribute="top" constant="10" id="5Ll-Py-sk3"/>
                             <constraint firstItem="8w5-wI-Xtf" firstAttribute="leading" secondItem="C8R-PR-amC" secondAttribute="leading" id="6ND-BQ-qEU"/>
+                            <constraint firstItem="1zT-iv-4g7" firstAttribute="trailing" secondItem="07G-u7-aUq" secondAttribute="trailing" constant="10" id="6RA-mC-hz7"/>
                             <constraint firstItem="1zT-iv-4g7" firstAttribute="trailing" secondItem="8w5-wI-Xtf" secondAttribute="trailing" id="8vZ-fV-Gn6"/>
                             <constraint firstItem="KuT-SF-Ejf" firstAttribute="top" secondItem="UBR-fE-JFa" secondAttribute="bottom" constant="10" id="9uQ-Q4-aCf"/>
                             <constraint firstItem="izr-x9-439" firstAttribute="leading" secondItem="1zT-iv-4g7" secondAttribute="leading" constant="10" id="9w7-Fj-Pec"/>
