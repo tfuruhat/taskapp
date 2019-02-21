@@ -13,6 +13,7 @@ import UserNotifications
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var grepTextField: UITextField!
     
     // Realmインスタンスを取得する
     let realm = try! Realm()
@@ -27,6 +28,19 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         // Do any additional setup after loading the view, typically from a nib.
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    
+    @IBAction func serchButton(_ sender: Any)
+    {
+    
+        let check = grepTextField.text
+//    let result = NSPredicate(format: "category == %@", check!)
+//     let result = realm.objects(Task.self).filter("category = %s", check!)
+        taskArray = realm.objects(Task.self).filter("category = %s", check!)
+        tableView.reloadData()
+
+        print("taskArray == \(taskArray) デバッグ用２")
     }
     
     // segue で画面遷移するに呼ばれる
@@ -79,7 +93,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         let dateString:String = formatter.string(from: task.date)
         cell.detailTextLabel?.text = dateString
-        
+
         return cell
     }
     

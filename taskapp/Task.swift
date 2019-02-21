@@ -18,6 +18,9 @@ class Task: Object{
     //内容
     @objc dynamic var contents = ""
     
+    //文字列検索
+    @objc dynamic var category = ""
+    
     //日時
     @objc dynamic var date = Date()
     
