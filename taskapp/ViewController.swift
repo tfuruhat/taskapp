@@ -10,11 +10,11 @@ import UIKit
 import RealmSwift
 import UserNotifications
 
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var grepTextField: UITextField!
     
+    @IBOutlet weak var searchBar: UISearchBar!
     // Realmインスタンスを取得する
     let realm = try! Realm()
     
@@ -26,21 +26,39 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        // 背景をタップしたら dissmissKeyboardメソッドを呼ぶように設定する
+//        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+//        self.view.addGestureRecognizer(tapGesture)
+        
         tableView.delegate = self
         tableView.dataSource = self
+        
+        searchBar.delegate = self
+        searchBar.showsCancelButton = true
     }
+
+    // キーボードを閉じる
+//    @objc func dismissKeyboard()
+//    {
+//        view.endEditing(true)
+//    }
     
-    
-    @IBAction func serchButton(_ sender: Any)
+    // searchBarで検索した時に呼ばれる
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
     {
-    
-        let check = grepTextField.text
-//    let result = NSPredicate(format: "category == %@", check!)
-//     let result = realm.objects(Task.self).filter("category = %s", check!)
+        let check = searchBar.text
+        //    let result = NSPredicate(format: "category == %@", check!)
+        //     let result = realm.objects(Task.self).filter("category = %s", check!)
         taskArray = realm.objects(Task.self).filter("category = %s", check!)
         tableView.reloadData()
-
-        print("taskArray == \(taskArray) デバッグ用２")
+        print("taskArray == \(taskArray) デバッグ用3")
+    }
+    
+    // serchBarの検索結果をキャンセルする
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar)
+    {
+        taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: false)
+        tableView.reloadData()
     }
     
     // segue で画面遷移するに呼ばれる
