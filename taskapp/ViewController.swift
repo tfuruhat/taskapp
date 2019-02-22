@@ -27,8 +27,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         // 背景をタップしたら dissmissKeyboardメソッドを呼ぶように設定する
-//        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-//        self.view.addGestureRecognizer(tapGesture)
+ //        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+ //        self.view.addGestureRecognizer(tapGesture)
         
         tableView.delegate = self
         tableView.dataSource = self
